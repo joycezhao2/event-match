@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<title>Event Match</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,29 +10,19 @@
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
         <link rel="stylesheet" href="themes/event-match.min.css" />
-	
 	</head>
 
 	<body>
 <!--...............................Login page...............................-->
-
         <div data-role="page" id="login">
 
         	<!--Event Match Logo-->
-
              <img src = "img/logo.png">
-
-            <!--<div style = "text-align: center;">
-                <img src = "img/logo.png">
-            </div>-->
             
             <form>
-
-            	<!--Username and Password Input-->
-          
+           	<!--Username and Password Input-->
             	<input type="text" name="username" id="textinput-fc" placeholder="Username" value=""><br>
-
-            	<input type="text" name="password" id="textinput-fc" placeholder="Password" value="">
+            	<input type="password" name="password" id="password" placeholder="Password" value="" autocomplete="off">
 
             	<br>
 
@@ -43,109 +32,99 @@
                  <a href = "#signup" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">SIGN UP</a>
 
             </form>
-            <br><br><br><br>
         </div> 
 <!--............................End of login page...........................--> 
-<!--..............................Sign Up page..............................-->
 
+<!--..............................Sign Up page..............................-->
         <div data-role="page" id="signup">
 
         	<!--Header-->
-
-            <div data-role="header" class="header">
+            <div data-role="header" class="header" data-position="fixed">
                 <h1>EventMatch</h1>
             </div>
-            <br><br><br><br><br>
-            <form>
 
+            <form>
             	<!--Email and Password Input-->
 
                 <h1> Sign up:</h1><br>
 
                 <input type="text" name="email" id="basic" placeholder="Email" value=""><br>
-
-                <input type="text" name="password" id="basic" placeholder="Password" value="">
-
-                <input type="text" name="confirmation" id="basic" placeholder="Confirm Password" value="">
+                <input type="password" name="password" id="basic" placeholder="Password" value="">
+                <input type="password" name="confirmation" id="basic" placeholder="Confirm Password" value="">
 
             	<br>
 
                 <!--Register Button-->
 
                 <a href = "#home" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">REGISTER</a> <br>
-            
             </form>
-            <br><br><br><br>
 
-            <div data-role="footer" class="footer"></div>
+            <div data-role="footer" class="footer" data-position="fixed"></div>
         </div> 
 <!--.........................End of Sign Up page............................-->
 
 <!--..........................Search Event page.............................-->
-       
 		<div data-role="page" id="home">
 
-			<div data-role="header" class="header">
+			<div data-role="header" class="header" data-position="fixed">
 				<h1>Browse Events</h1>
 			</div>
-            <br><br>
-
+            
 			<!--Search Event Content-->
-
 			<div data-role="content">
-
 				<!--Search Bar Input-->
-
 				<form class="ui-filterable">
-					<input id="filterBasic-input" data-type="search" placeholder="Search by keyword">
+					<input id="event-search" data-type="search" placeholder="Search by keyword">
 				</form>
 
 				<!--Advanced Search Button-->
-
-		    	<div style = "text-align:center" width = 80% height = 40%;>
+		    	<div style = "text-align:center">
 		    	     <a href = "#popupPadded" data-rel = "popup" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">Advanced Search</a>
+                     <h5 style="margin-top: 7px; margin-bottom: 5px;"> No filters applied</h5>
 		    	</div>
 
-		    	<div data-role= "popup" id="popupPadded" class="ui-content">
-		    		
+		    	<div data-role="popup" id="popupPadded" class="ui-content">
 		    		<!--Search Bar Input-->
 		    		<h3>Refine Your Search</h3>
-		    		<input id="filterBasic-input" data-type="search" placeholder="Search by keyword" data-mini="true">
+                    <br>
+		    		<input id="filter-search" data-type="search" placeholder="Search by keyword" data-mini="true">
 
                     <!-- Option to close the popup-->
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 
                     <div class="ui-field-contain">
 
 						<!--Search Categories-->
-
-			    		<fieldset data-role="controlgroup">
+			    		<fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal" style="margin: 0px;">
                             <legend> Categories:</legend>
-			        		
-			        		<input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
-			        		<label for="checkbox-v-2a">Sports</label>
-			        		
-			        		<input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
-			        		<label for="checkbox-v-2b">Arts</label>
-			        		
-			        		<input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
-			        		<label for="checkbox-v-2c">Music</label>
+                            
+                            <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+                            <label for="checkbox-v-2a">Sports</label>
+                            
+                            <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+                            <label for="checkbox-v-2b">Arts</label>
+                        </fieldset>
+                        <fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal" style="margin: 0px;">
+                            <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+                            <label for="checkbox-v-2c">Music</label>
 
-			        		<input type="checkbox" name="checkbox-v-2d" id="checkbox-v-2d">
-			        		<label for="checkbox-v-2d">Culture</label>
+                            <input type="checkbox" name="checkbox-v-2d" id="checkbox-v-2d">
+                            <label for="checkbox-v-2d">Culture</label>
+                        </fieldset>
+                        <fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal" style="margin: 0px;">
+                            <input type="checkbox" name="checkbox-v-2e" id="checkbox-v-2e">
+                            <label for="checkbox-v-2e">Technology</label>
 
-			        		<input type="checkbox" name="checkbox-v-2e" id="checkbox-v-2e">
-			        		<label for="checkbox-v-2e">Technology</label>
+                            <input type="checkbox" name="checkbox-v-2f" id="checkbox-v-2f">
+                            <label for="checkbox-v-2f">Lecture</label>
+                        </fieldset>
+                        <fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal" style="margin: 0px;">
+                            <input type="checkbox" name="checkbox-v-2g" id="checkbox-v-2g">
+                            <label for="checkbox-v-2g">Career</label>
 
-			        		<input type="checkbox" name="checkbox-v-2f" id="checkbox-v-2f">
-			        		<label for="checkbox-v-2f">Lecture</label>
-
-			        		<input type="checkbox" name="checkbox-v-2g" id="checkbox-v-2g">
-			        		<label for="checkbox-v-2g">Career</label>
-
-			        		<input type="checkbox" name="checkbox-v-2h" id="checkbox-v-2h">
-			        		<label for="checkbox-v-2h">Other</label>
-			    		</fieldset>
+                            <input type="checkbox" name="checkbox-v-2h" id="checkbox-v-2h">
+                            <label for="checkbox-v-2h">Other</label>
+                        </fieldset>
 
                         <!--Price Select Menu-->  
                          <div class="ui-field-contain"> 
@@ -160,6 +139,158 @@
                         </div>
 
                         <!-- Mile Radius Location -->
+                        <label for="slider-1">Location(Mile Radius):</label>
+                        <input type="range" name="slider-1" id="slider-1" min="0" max="30" value="0"><br>
+
+                        <!-- Enter Specific Date -->
+                        <label for="date">Specific Date:</label>
+                        <input type="date" name="date" id="date" value=""><br>
+
+			    	    <!-- Apply Filters button -->
+			    	    <a href="#filteredEvents" class="ui-btn ui-corner-all ui-shadow">Apply Filters</a>
+                    </div>
+				</div><!-- End of Advanced Search Popup -->
+
+				<!-- Event Listing -->
+				<div id = "events">
+    				<ul data-role="listview" data-inset="true">
+    					<li data-role="list-divider">List of Events</li>
+
+    					<!-- Olin Tech Event Listing -->
+    					<li data-icon = "info">
+    						<a href="#oevent">
+    						<img src = "img/oevent.jpg">
+    						<h2>Olin Technology Fair</h2>
+    						<p> May 1st, 2018 at Olin Hall </p>
+    						</a>
+    					</li>
+
+    					<!-- MIT Hockey Event Listing -->
+    					<li data-icon = "info"><a href="#mevent">
+    						<img src = "img/mevent.jpg">
+    						<h2>MIT Hockey Game</h2>
+    						<p> May 7th, 2018 at MIT Ice Rink</p>
+    						</a>
+    					</li>
+
+    					<!-- Brandeis Orchestra Event Listing -->
+    			    	<li data-icon = "info">
+    			    		<a href="#brevent">
+    						<img src = "img/brevent.jpg">
+    						<h2>Brandeis-Wellesley Orchestra</h2>
+    						<p> May 8th, 2018 at Wellesley Houghton Chapel</p>
+    						</a>
+    					</li>
+
+    					<!-- Babson Musical Event Listing -->
+    			    	<li data-icon = "info">
+    			    		<a href="#baevent">
+    			    		<img src = "img/baevent.jpg">
+    						<h2>Babson Players Presents: <br>Heathers The Musical</h2>
+    						<p> May 11th, 2018 at Babson Sorenson Theater</p>
+    						</a>
+    					</li>
+
+    					<!-- MIT-Wellesley Toons Concert Event Listing -->
+    					<li data-icon = "info">
+    						<a href="#wmevent">
+    			    		<img src = "img/wmevent.jpg">
+    						<h2>Wellesley-MIT Toons Spring Concert</h2>
+    						<p> May 19th, 2018 at Stone-Davis Living Room</p>
+    						</a>
+    					</li>
+    		    	</ul>
+                </div> <!--End of vertical menu search page-->
+	    	</div><!-- End of Browse Events Page Contents -->
+
+			<div data-role="footer" class="footer" data-position="fixed">
+				<div data-role="navbar">
+				   	<ul>
+				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+				        <li><a href="#matches" data-icon="user">Matches</a></li>
+				        <li><a href="#create" data-icon="plus">Create</a></li>
+				    </ul>
+				</div>
+			</div><!-- Footer end -->
+		</div>
+<!--........................End of Search Event page........................-->
+
+<!--........................Beginning of Filtered Events page........................-->
+        <div data-role="page" id="filteredEvents">
+
+            <div data-role="header" class="header" data-position="fixed">
+                <h1>Browse Events</h1>
+            </div>
+
+            <!--Search Event Content-->
+
+            <div data-role="content">
+                <!--Search Bar Input-->
+                <form class="ui-filterable">
+                    <input id="event-search" data-type="search" placeholder="Search by keyword">
+                </form>
+
+                <!--Advanced Search Button-->
+                <div style = "text-align:center">
+                     <a href = "#filtered-popup" data-rel = "popup" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">Advanced Search</a>
+                     <h5 style="margin-top: 7px; margin-bottom: 5px;"> Filters applied</h5>
+                </div>
+
+                <div data-role= "popup" id="filtered-popup" class="ui-content">
+                    <!--Search Bar Input-->
+                    <h3>Refine Your Search</h3>
+                    <input id="filter-search" data-type="search" placeholder="Search by keyword" data-mini="true">
+                    <a href="#home" class="ui-btn ui-corner-all ui-shadow">Clear Filters</a>
+
+                    <!-- Option to close the popup-->
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                    <div class="ui-field-contain">
+
+                        <!--Search Categories-->
+
+                        <fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal" style="margin-bottom: 5px;">
+                            <legend> Categories:</legend>
+                            
+                            <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+                            <label for="checkbox-v-2a">Sports</label>
+                            
+                            <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+                            <label for="checkbox-v-2b">Arts</label>
+                            
+                            <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+                            <label for="checkbox-v-2c">Music</label>
+
+                            <input type="checkbox" name="checkbox-v-2d" id="checkbox-v-2d">
+                            <label for="checkbox-v-2d">Culture</label>
+                        </fieldset>
+                        <fieldset data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                            <input type="checkbox" name="checkbox-v-2e" id="checkbox-v-2e">
+                            <label for="checkbox-v-2e">Technology</label>
+
+                            <input type="checkbox" name="checkbox-v-2f" id="checkbox-v-2f">
+                            <label for="checkbox-v-2f">Lecture</label>
+
+                            <input type="checkbox" name="checkbox-v-2g" id="checkbox-v-2g">
+                            <label for="checkbox-v-2g">Career</label>
+
+                            <input type="checkbox" name="checkbox-v-2h" id="checkbox-v-2h">
+                            <label for="checkbox-v-2h">Other</label>
+                        </fieldset>
+
+                        <!--Price Select Menu-->  
+                         <div class="ui-field-contain"> 
+                            <label for="select-price" class="select">Price:</label>
+                                <select name="select-price" id="select-price" data-native-menu="false" >
+                                    <option value="free">Free</option>
+                                    <option value="1-10">$1-$10</option>
+                                    <option value="11-25">$11-$25</option>
+                                    <option value="26-50">$26-$50</option>
+                                    <option value="50+">$50+</option>
+                                </select>
+                        </div>
+
+                        <!-- Mile Radius Location -->
 
                         <label for="slider-1">Location(Mile Radius):</label>
                         <input type="range" name="slider-1" id="slider-1" min="0" max="30" value="0"><br>
@@ -169,109 +300,57 @@
                         <label for="date">Specific Date:</label>
                         <input type="date" name="date" id="date" value=""><br>
 
-
-
-			    	    <!-- Apply Filters button -->
-
-			    	    <a href="#home" class="ui-btn ui-corner-all ui-shadow">Apply Filters</a>
-
+                        <!-- Apply Filters button -->
+                        <a href="#home" class="ui-btn ui-corner-all ui-shadow">Apply Filters</a>
                     </div>
+                </div><!-- End of Advanced Search Popup -->
 
-				</div><!-- End of Advanced Search Popup -->
+                    <ul data-role="listview" data-inset="true">
+                        <li data-role="list-divider">List of Events</li>
+                        <!-- Babson Musical Event Listing -->
+                        <li data-icon = "info">
+                            <a href="#baevent">
+                            <img src = "img/baevent.jpg">
+                            <h2>Babson Players Presents: <br>Heathers The Musical</h2>
+                            <p> May 11th, 2018 at Babson Sorenson Theater</p>
+                            </a>
+                        </li>
 
+                        <!-- MIT-Wellesley Toons Concert Event Listing -->
+                        <li data-icon = "info">
+                            <a href="#wmevent">
+                            <img src = "img/wmevent.jpg">
+                            <h2>Wellesley-MIT Toons Spring Concert</h2>
+                            <p> May 19th, 2018 at Stone-Davis Living Room</p>
+                            </a>
+                        </li>
+                    </ul>
+            </div><!-- End of Browse Events Page Contents -->
 
-				<!-- Event Listing -->
-
-				<div class="vertical-menu">
-
-    				<ul data-role="listview" data-inset="true">
-    					<li data-role="list-divider">List of Events</li>
-    					
-    					<!-- Olin Tech Event Listing -->
-
-    					<li data-icon = "info">
-    						<a href="#oevent">
-    						<img src = "img/oevent.jpg">
-    						<h2>Olin Technology Fair</h2>
-    						<p> May 1st, 2018 <br> 2:00-5:00 PM <br> Olin Hall </p>
-    						</a>
-    					</li>
-
-    					<!-- MIT Hockey Event Listing -->
-
-    					<li data-icon = "info"><a href="#mevent">
-    						<img src = "img/mevent.jpg">
-    						<h2>MIT Hockey Game</h2>
-    						<p> May 7th, 2018 <br> 5:00 PM <br> MIT Ice Rink</p>
-    						</a>
-    					</li>
-
-    					<!-- Brandeis Orchestra Event Listing -->
-
-    			    	<li data-icon = "info">
-    			    		<a href="#brevent">
-    						<img src = "img/brevent.jpg">
-    						<h2>Brandeis-Wellesley Orchestra</h2>
-    						<p> May 8th, 2018 <br> 7:30 PM <br> Wellesley Houghton Chapel</p>
-    						</a>
-    					</li>
-
-    					<!-- Babson Musical Event Listing -->
-
-    			    	<li data-icon = "info">
-    			    		<a href="#baevent">
-    			    		<img src = "img/baevent.jpg">
-    						<h2>Babson Players Presents: <br>Heathers The Musical</h2>
-    						<p> May 11th, 2018 <br> 7:00 PM <br> Babson Sorenson Theater</p>
-    						</a>
-    					</li>
-
-    					<!-- MIT-Wellesley Toons Concert Event Listing -->
-    					
-    					<li data-icon = "info">
-    						<a href="#wmevent">
-    			    		<img src = "img/wmevent.jpg">
-    						<h2>Wellesley-MIT Toons Spring Concert</h2>
-    						<p> May 19th, 2018 <br> 7:00 PM <br> Stone-Davis Living Room</p>
-    						</a>
-    					</li>
-    		    	</ul>
-
-                    <br><br><br>
-                </div> <!--End of vertical menu search page-->
-	    	
-	    	</div><!-- End of Browse Events Page Contents -->
-
-			<div data-role="footer" class="footer">
-				
-				<div data-role="navbar">
-				   	<ul>
-				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
-				        <li><a href="#matches" data-icon="user">Matches</a></li>
-				        <li><a href="#create" data-icon="plus">Create</a></li>
-				    </ul>
-				</div>
-
-			</div><!-- Footer end -->
-		</div>
-<!--........................End of Search Event page........................-->
+            <div data-role="footer" class="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#filteredEvents" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Filtered Events page........................-->
 
 <!--.........................Event Example pages............................-->
 
 <!-- Start of Olin Tech Event Example page -->
-
 		<div data-role="page" id="oevent">
-
 			<!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#home" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#o-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="o-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
                     	<li data-role="list-divider">Options</li>
                         <li>
@@ -281,38 +360,32 @@
                         	</form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                        	<a href="#report" class="ui-btn ui-btn-inline">Report Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
 
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/oevent.jpg" height="250" width="500" alt="Olin Tech Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">Olin Technology Fair<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>Olin College of Engineering</p>
-                <p>May 1st, 2018</p>
-                <p>2:00-5:00pm EST</p>
-                <p>Olin Hall</p>
-                <p>Free</p>
+                <img style="width: 100%; height: 100%;" id="olin" src="img/oevent.jpg" alt="Olin Tech Poster">
 
-                <p></p>
+                <h3><strong>Olin Technology Fair</strong>    ☆</h3>
+                
+                <!--<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a>-->
+                <p>Olin College of Engineering<br>May 1st, 2018<br>2:00-5:00pm EST<br><a href="https://www.google.com/maps/place/Franklin+W.+Olin+College+of+Engineering/@42.2931671,-71.2658593,17z/data=!3m1!4b1!4m5!3m4!1s0x89e3813ffb63f5bb:0xa038229eeed8c35b!8m2!3d42.2931671!4d-71.2636653">Olin Hall</a><br>Free</p>
 
                 <p>Come network with technology company employers and hopefully win an intership with one! <br> Hope to see you there! <br> Dress Code: Business Casual.<br><br>
                 Note: Do not forget your resume!</p>
 
-                <h2></h2>
+                <!--RSVP and Contact Host Option Buttons-->
+		        <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
             </div><!--Olin Tech page content -->
 
             <!-- Olin Event Footer -->
             
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
@@ -328,55 +401,46 @@
 		<div data-role="page" id="mevent">
 
 			<!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#home" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#m-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="m-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    	<li data-role="list-divider">Options</li>
+                        <li data-role="list-divider">Options</li>
                         <li>
-                        	<form>
-                        		<label for="flip-checkbox-1">Event Notifications</label>
-                        		<input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
-                        	</form>
+                            <form>
+                                <label for="flip-checkbox-1">Event Notifications</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+                            </form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                            <a href="#report" class="ui-btn ui-btn-inline">Report Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
 
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/mevent.jpg" height="250" width="500" alt="MIT Hockey Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">MIT Hockey Game<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>Massachusetts Institute of Technology</p>
-                <p>May 7th, 2018</p>
-                <p>5:00pm EST</p>
-                <p>MIT Ice Rink</p>
-                <p>Free</p>
+                <img style="width: 100%; height: 100%;" id="olin" src="img/mevent.jpg" alt="MIT Hockey Poster">
 
-                <p></p>
+                <h3><strong>MIT Hockey Game</strong><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
 
-                <p>Come cheer on the MIT Hockey team at their last day for the season! <br> Hope to see you there! <br><br>
+                <p>Massachusetts Institute of Technology<br>May 7th, 2018<br>5:00pm EST<br><a href="https://www.google.com/maps/place/Johnson+Ice+Rink/@42.3584656,-71.0986072,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370a9fdd22cb9:0x6c9fb506acab00d8!8m2!3d42.3584656!4d-71.0964132">Johnson Ice Rink</a><br>Free</p>
 
-                <h2></h2>
+                <p>Come cheer on the MIT Hockey team at their last day for the season! <br> Hope to see you there!</p>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <!--RSVP and Contact Host Option Buttons-->
+                <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
+
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
+
             </div><!--MIT Hockey page content -->
 
             <!-- MIT Hockey Event Footer -->
-            
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
@@ -392,56 +456,48 @@
 		<div data-role="page" id="brevent">
 
 			<!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#home" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#b-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="b-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    	<li data-role="list-divider">Options</li>
+                        <li data-role="list-divider">Options</li>
                         <li>
-                        	<form>
-                        		<label for="flip-checkbox-1">Event Notifications</label>
-                        		<input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
-                        	</form>
+                            <form>
+                                <label for="flip-checkbox-1">Event Notifications</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+                            </form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                            <a href="#report" class="ui-btn ui-btn-inline">Report Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
 
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/brevent.jpg" height="250" width="500" alt="Brandeis-Wellesley Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">Brandeis-Wellesley Orchestra<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>Brandeis University and Wellesley College</p>
-                <p>May 8th, 2018</p>
-                <p>7:30pm EST</p>
-                <p>Wellesley Houghton Chapel</p>
-                <p>Free</p>
 
-                <p></p>
+                <img style="width: 100%; height: 100%;" src="img/brevent.jpg" alt="Brandeis-Wellesley Poster"">
 
-                <p>Come enjoy some classical music at the Wellesley Houghton Chapel and meet the Brandeis-Wellesley Orchestra. This is their last concert of the semester, so you do not want to miss it. <br> Hope to see you there!<br><br>
-                Suggestion: Bring a friend, you will not regret it!</p>
+                <h3><strong>Brandeis-Wellesley Orchestra Concert</strong><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
+                <p>Brandeis University and Wellesley College<br>May 8th, 2018<br>7:30pm EST<br><a href="https://www.google.com/maps/place/Houghton+Memorial+Chapel/@42.2914382,-71.3067364,17z/data=!3m1!4b1!4m5!3m4!1s0x89e386c485eb74cd:0xf3ffeeab77dba8c8!8m2!3d42.2914382!4d-71.3045424">Wellesley Houghton Chapel</a><br>Free</p>
+
+                <p>Come enjoy some classical music at the Wellesley Houghton Chapel and meet the Brandeis-Wellesley Orchestra. This is their last concert of the semester, so you do not want to miss it. <br> Hope to see you there! </p>
 
                 <h2></h2>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <!--RSVP and Contact Host Option Buttons-->
+                <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
+
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
             </div><!--Brandeis Orchestra page content -->
 
             <!-- Brandeis Orchestra Event Footer -->
             
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
@@ -457,56 +513,46 @@
 		<div data-role="page" id="baevent">
 
 			<!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#home" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#ba-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="ba-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    	<li data-role="list-divider">Options</li>
+                        <li data-role="list-divider">Options</li>
                         <li>
-                        	<form>
-                        		<label for="flip-checkbox-1">Event Notifications</label>
-                        		<input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
-                        	</form>
+                            <form>
+                                <label for="flip-checkbox-1">Event Notifications</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+                            </form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                            <a href="#report" class="ui-btn ui-btn-inline">Report Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
 
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/baevent.jpg" height="250" width="500" alt="Babson Musical Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">Babson Players Presents: Heathers the Musical<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>Babson College</p>
-                <p>May 11th, 2018</p>
-                <p>7:00pm EST</p>
-                <p>Babson Sarenson Theater</p>
-                <p>Free</p>
 
-                <p></p>
+                <img style="width: 100%; height: 100%;" src="img/baevent.jpg" alt="Babson Musical Poster"">
 
-                <p>The Babson Players are proud to present HEATHERS: THE MUSICAL! <br> For tickets, visit: https://web.ovationtix.com/trs/pe.c/10264711<br> Hope to see you there!<br><br>
-                Contact Information:<br>Name: Tim Andrew<br>Phone: 5180431077</p>
+                <h3><strong>Babson Players Presents: Heathers the Musical</strong><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
+                <p>Babson College<br>May 11th, 2018<br>7:00pm EST<br><a href="https://www.google.com/maps/place/Sorenson+Theater/@42.2972578,-71.2668045,17z/data=!3m1!4b1!4m5!3m4!1s0x89e381421c63e475:0xbe4b796f6c46ec18!8m2!3d42.2972578!4d-71.2646105">Babson Sorenson Theater</a><br>$5.00</p>
 
-                <h2></h2>
+                <p>The Babson Players are proud to present HEATHERS: THE MUSICAL!<br> Hope to see you there! </p>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <!--RSVP and Contact Host Option Buttons-->
+                <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
+
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
             </div><!--Babson Musical page content -->
 
             <!-- Babson Musical Event Footer -->
             
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
@@ -522,55 +568,46 @@
 		<div data-role="page" id="wmevent">
 
 			<!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#home" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#w-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="w-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    	<li data-role="list-divider">Options</li>
+                        <li data-role="list-divider">Options</li>
                         <li>
-                        	<form>
-                        		<label for="flip-checkbox-1">Event Notifications</label>
-                        		<input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
-                        	</form>
+                            <form>
+                                <label for="flip-checkbox-1">Event Notifications</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+                            </form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                            <a href="#report" class="ui-btn ui-btn-inline">Report Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
 
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/wmevent.jpg" height="250" width="500" alt="Wellesley-MIT Toons Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">Wellesley-MIT Toons Spring Concert<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>MIT and Wellesley College</p>
-                <p>May 19th, 2018</p>
-                <p>8:00pm EST</p>
-                <p>Stone-Davis Living Room</p>
-                <p>Free</p>
 
-                <p></p>
+                <img style="width: 100%; height: 100%;" src="img/wmevent.jpg" alt="Wellesley-MIT Toons Poster">
 
-                <p>If you want to end this semester with a smile on your face...come listen to some exciting toons by your favorite acapella group, the MIT Wellesley Toons! If you cannot make it to this concert, there will another one at MIT on May 22th.<br> Hope to see you there! <br><br>
+                <h3><strong>Wellesley-MIT Toons Spring Concert</strong><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
+                <p>MIT and Wellesley College<br>May 19th, 2018<br>8:00pm EST<br><a href="https://www.google.com/maps/place/Stone-Davis+Hall,+Wellesley,+MA+02481/@42.2910625,-71.305274,17z/data=!3m1!4b1!4m5!3m4!1s0x89e386c4f09c17bb:0x72aac3fcb05cd60e!8m2!3d42.2912033!4d-71.3030403">Stone Davis Living Room</a><br>Free</p>
 
-                <h2></h2>
+                <p>If you want to end this semester with a smile on your face...come listen to some exciting toons by your favorite acapella group, the MIT Wellesley Toons! If you cannot make it to this concert, there will another one at MIT on May 22th.<br> Hope to see you there! </p>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <!--RSVP and Contact Host Option Buttons-->
+                <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
+
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
             </div><!--MIT Wellesley page content -->
 
             <!-- MIT Wellesley Event Footer -->
             
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
@@ -581,61 +618,51 @@
 			</div>
         </div>
 
-<!-- Start of Wellesley Event Example page -->
+<!-- Start of Slater Show page -->
 
         <div data-role="page" id="wevent">
 
-            <!--Header-->
-
-            <div data-role="header" data-position="inline" class="header">
-
-                <a href="#create" data-icon="arrow-l" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+           <!--Header-->
+            <div data-role="header" class="header" data-position="fixed">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <h1></h1>
 
-                <a href="#options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
-                <div data-role="popup" id="options" data-theme="b">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <a href="#s-options" data-rel="popup" data-icon="bars" data-iconpos="notext" value="Icon only" data-iconpos="right"></a>
+                <div data-role="popup" id="s-options" data-theme="b">
+                    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    	<li data-role="list-divider">Options</li>
+                        <li data-role="list-divider">Options</li>
                         <li>
-                        	<form>
-                        		<label for="flip-checkbox-1">Event Notifications</label>
-                        		<input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
-                        	</form>
+                            <form>
+                                <label for="flip-checkbox-1">Event Notifications</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+                            </form>
                         </li>
                         <li>
-                        	<a href="#" class="ui-btn ui-btn-inline">Report Event</a>
+                            <a href="#deleteEvent" class="ui-btn ui-btn-inline">Delete Event</a>
                         </li>
                     </ul>
                 </div>
-
             </div><!--End of header-->
-
-            <p style="padding: 0px 20px 0px 20px;"><img src="img/wevent.jpg" height="250" width="500" alt="Spring Festival Poster"></p>
-
-            <h3 style="padding: 5px 10px 0px 10px;">Slater Spring Festival<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
-
             <div role="main" class="ui-content">
-                <p>Wellesley College</p>
-                <p>April 21, 2018</p>
-                <p>1:00-4:00pm EST</p>
-                <p>Chapel Lawn</p>
-                <p>Free</p>
 
-                <p></p>
+                <img style="width: 100%; height: 100%;" src="img/wevent.jpg" alt="Spring Festival Poster">
 
-                <p>Come enjoy Slater and other Cultural Orgs for food, dance, music, performances and more! <br> Hope to see you there! <br><br>
+                <h3><strong>Slater Spring Festival</strong><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-star ui-btn-icon-notext" title="star icon" style="background-color: white; border-style: none"></a></h3>
+                <p>Wellesley College<br>May 19th, 2018<br>1:00-4:00pm EST<br><a href="https://www.google.com/maps/place/Houghton+Memorial+Chapel/@42.2910625,-71.305274,17z/data=!4m5!3m4!1s0x89e386c485eb74cd:0xf3ffeeab77dba8c8!8m2!3d42.2914382!4d-71.3045424">Houghton Memorial Chapel Lawn</a><br>Free</p>
+
+                <p>Come enjoy Slater and other Cultural Orgs for food, dance, music, performances and more! <br> Hope to see you there!<br>
                 Note: In case of rain, the alternative location is the HMC Multi Faith Room.</p>
 
-                <h2></h2>
+                <!--RSVP and Contact Host Option Buttons-->
+                <a href="#rsvp" class="ui-btn ui-corner-all">RSVP</a>
 
-                <a href="#" class="ui-btn ui-corner-all">RSVP</a>
-                <a href="#" class="ui-btn ui-corner-all">Contact the Host</a>
+                <a href="#contact-host" class="ui-btn ui-corner-all">Contact the Host</a>
             </div><!-- End of Wellesley Spring Festival content -->
 
             <!-- Wellesley Spring Festival Footer -->
             
-            <div data-role="footer" class="footer">
+            <div data-role="footer" class="footer" data-position="fixed">
 				<div data-role="navbar">
 				   	<ul>
 				   		<li><a href="#home" data-icon="search" >Search</a></li>
@@ -648,12 +675,67 @@
         </div>
 <!--.......................End of Event Example pages.......................-->
 
+<!--........................Delete Event page...............................-->
+        <div data-role="page" id="deleteEvent">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <div style = "text-align:center;">
+                <p>Are you sure you want to delete "Event Name Here"?</p><hr><br>
+                </div>
+                <form>
+                    <a href="#home" style="background: green; color: white;" data-role="button" data-inline="true" data-icon="check">Yes</a>
+                    <a data-rel="back" style="background: red; color: white;" back-btn="true" data-role="button" data-inline="true" data-theme="b" data-icon="delete">No</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Delete Event page.........................-->
+
+<!--........................Delete Account page...............................-->
+        <div data-role="page" id="deleteAccount">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <div style = "text-align:center;">
+                <p>Are you sure you want to delete your account?</p><hr><br>
+                </div>
+                <form>
+                    <a href="#login" style="background: green; color: white;" data-role="button" data-inline="true" data-icon="check">Yes</a>
+                    <a data-rel="back" style="background: red; color: white;" back-btn="true" data-role="button" data-inline="true" data-theme="b" data-icon="delete">No</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Delete Event page.........................-->
+
 <!--..........................Your Matches page.............................-->
-  		
   		<div data-role="page" id="matches"> 
-
   			<!--Header-->
-
             <div data-role="header" data-position="inline" class="header">
                 <a href="#popupMenu" data-rel="popup" data-icon="gear" data-iconpos="notext" value="Icon only" data-iconpos="left"></a>
                 <div data-role="popup" id="popupMenu" data-theme="b">
@@ -669,27 +751,22 @@
                         <li>
                         	<a href="#login" class="ui-btn ui-btn-inline">Logout</a>
                         </li>
-                        <li><a href="#" class="ui-btn ui-btn-inline" style="color:red;">Delete Account</a>
+                        <li><a href="#deleteAccount" class="ui-btn ui-btn-inline" style="color:red;">Delete Account</a>
                         </li>
                     </ul>
                 </div>
-
                 <h1>Your Matches!</h1>
-            </div>
+            </div> <!--End of Header-->
 
             <!--Matches Page Content-->
-
             <div class="content">
-
             	<form class="ui-filterable">
 					<input id="filterBasic-input" data-type="search" placeholder="Browse matches">
 				</form>
 				<br>
 
 				<!--Starred . Attending . Hosting Tabs-->
-
                 <div data-role="tabs" id="tabs">
-                    
                     <div data-role="navbar">
                         <ul>
                           <li>
@@ -701,82 +778,102 @@
                         </ul>
                     </div>
 
-                    <div class="vertical-menu">
+                    <!--Starred Tab-->
+                    <div id="star" class="ui-body-d ui-content">
+                        <ul data-role="listview" data-inset="true">
+                            <!-- Olin Tech Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#oevent">
+                                <img src = "img/oevent.jpg">
+                                <h2>Olin Technology Fair</h2>
+                                <p> May 1st, 2018 at Olin Hall </p>
+                                </a>
+                            </li>
 
-                    	<!--Starred Tab-->
+                            <!-- MIT Hockey Event Listing -->
+                            <li data-icon = "info"><a href="#mevent">
+                                <img src = "img/mevent.jpg">
+                                <h2>MIT Hockey Game</h2>
+                                <p> May 7th, 2018 at MIT Ice Rink</p>
+                                </a>
+                            </li>
 
-                        <div id="star" class="ui-body-d ui-content">
-                            <ul data-role="listview" data-inset="true">
+                            <!-- Brandeis Orchestra Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#brevent">
+                                <img src = "img/brevent.jpg">
+                                <h2>Brandeis-Wellesley Orchestra</h2>
+                                <p> May 8th, 2018 at Wellesley Houghton Chapel</p>
+                                </a>
+                            </li>
 
-                                <li><a href="#oevent">
-                                    <img src="img/oevent.jpg">
-                                    <h2>Olin Tech Fair</h2>
-                                    <p> May 1st, 2018 <br> 2:00-5:00 PM <br> Olin Hall </p></a>
-                                </li>
+                            <!-- Babson Musical Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#baevent">
+                                <img src = "img/baevent.jpg">
+                                <h2>Babson Players Presents: <br>Heathers The Musical</h2>
+                                <p> May 11th, 2018 at Babson Sorenson Theater</p>
+                                </a>
+                            </li>
 
-                                <li><a href="#mevent">
-                                    <img src="img/mevent.jpg">
-                                    <h2>MIT Hockey Game</h2>
-                                    <p> May 7th, 2018 <br> 5:00 PM <br> MIT Ice Rink</p></a>
-                                </li>
+                                <!-- MIT-Wellesley Toons Concert Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#wmevent">
+                                <img src = "img/wmevent.jpg">
+                                <h2>Wellesley-MIT Toons Spring Concert</h2>
+                                <p> May 19th, 2018 at Stone-Davis Living Room</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                                <li><a href="#brevent">
-                                    <img src="img/brevent.jpg">
-                                    <h2>Brandeis-Wellesley Orchestra</h2>
-                                    <p> May 8th, 2018 <br> 7:30 PM <br> Wellesley Houghton Chapel</p></a>
-                                </li>
+                    <div id="rsvp" class="ui-body-d ui-content">
+                        <ul data-role="listview" data-inset="true">
+                            <!-- Brandeis Orchestra Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#brevent">
+                                <img src = "img/brevent.jpg">
+                                <h2>Brandeis-Wellesley Orchestra</h2>
+                                <p> May 8th, 2018 at Wellesley Houghton Chapel</p>
+                                </a>
+                            </li>
 
+                            <!-- Babson Musical Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#baevent">
+                                <img src = "img/baevent.jpg">
+                                <h2>Babson Players Presents: <br>Heathers The Musical</h2>
+                                <p> May 11th, 2018 at Babson Sorenson Theater</p>
+                                </a>
+                            </li>
 
-                                <li><a href="#">
-                                    <img src="img/logo.png">
-                                    <h2>Jazz Senior Concert</h2>
-                                    <p>Berklee College</p>
-                                    <p>May 5, 2018</p></a>
-                                </li>
-                            </ul>
-                        </div>
+                                <!-- MIT-Wellesley Toons Concert Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#wmevent">
+                                <img src = "img/wmevent.jpg">
+                                <h2>Wellesley-MIT Toons Spring Concert</h2>
+                                <p> May 19th, 2018 at Stone-Davis Living Room</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>    
 
-                        <!--Attending/RSVP Tab-->
-
-                        <div id="rsvp" class="ui-body-d ui-content">
-                            <ul data-role="listview" data-inset="true">
-
-                                <li><a href="#oevent">
-                                    <img src="img/oevent.jpg">
-                                    <h2>Olin Tech Fair</h2>
-                                    <p> May 1st, 2018 <br> 2:00-5:00 PM <br> Olin Hall </p></a>
-                                </li>
-                                
-                                <li><a href="#">
-                                    <img src="img/logo.png">
-                                    <h2>Jazz Senior Concert</h2>
-                                    <p>Berklee College</p>
-                                    <p>May 5, 2018</p></a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!--Hosting/Creates/Saved Tab-->
-
-                        <div id="host" class="ui-body-d ui-content">
-                            <ul data-role="listview" data-inset="true">
-
-                                <li><a href="#wevent">
-                                    <img src="img/wevent.jpg">
-                                    <h2>Slater Spring Festival</h2>
-                                    <p>May 5, 2018<br>1:00-4:00 PM <br>
-                                    Chapel Lawn</p></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <br>
-
-                    </div> <!--End of vertical menu-->
-                </div><!--End of tabs-->
+                    <div id="host" class="ui-body-d ui-content">
+                        <ul data-role="listview" data-inset="true">
+                            <!-- MIT-Wellesley Toons Concert Event Listing -->
+                            <li data-icon = "info">
+                                <a href="#wmevent">
+                                <img src = "img/wmevent.jpg">
+                                <h2>Wellesley-MIT Toons Spring Concert</h2>
+                                <p> May 19th, 2018 at Stone-Davis Living Room</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!--End of vertical menu-->
             </div> <!--End of Matches page content-->
 
             <!--Matches Footer-->
-
             <div data-role="footer" class="footer">
 				<div data-role="navbar">
 				   	<ul>
@@ -788,14 +885,14 @@
 			</div><!--footer end-->
 
         </div>
- <!--..........................End of Matches page..........................-->
+<!--..........................End of Matches page...........................-->
 
- <!--...........................Create Event page...........................-->       
+<!--...........................Create Event page............................-->       
         <div data-role="page" id="create">
-            <div data-role="header" class="header">
+            <div data-role="header" class="header" data-position="fixed">
                 <h1>Create Event</h1>
             </div>
-            <br><br>
+
             <div role="content" class="ui-content">
             	<div class="vertical-menu-create">
                     <ul data-role="listview" data-inset="true">
@@ -883,37 +980,282 @@
 
     			             <!--Create Option Button-->
 
-    			             <a href="#popupsuccess" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Create</a>
-
-    			             <div data-role="popup" id="popupsuccess" class="ui-content">
-    			                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-    			                <form>
-    			                    <p>You have successfully created an event!</p>
-    			                    <p>A confirmation email has been sent to youremail@college.edu
-    			                    </p>
-    			                    <div class="ui-field-contain"> 
-    			                        <p>Share:</p>
-    			                        <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-action ui-btn-icon-notext"></button>
-    			                    </div>
-    			                    <a href="#wevent" class="ui-btn ui-btn-inline">View event</a>
-    			                </form>
-			                 </div>
+    			             <a href="#createconfirmation" data-rel="button" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Create</a>
 			         	</div></li>
                     </ul>
-			         <br><br>
                 </div>
             </div><!--content end-->
 
-            <div data-role="footer" class="footer">
-                    <div data-role="navbar">
-                        <ul>
-                            <li><a href="#home" data-icon="search" >Search</a></li>
-                            <li><a href="#matches" data-icon="user">Matches</a></li>
-                            <li><a href="#create" data-icon="plus" class = "ui-btn-active">Create</a></li>
-                        </ul>
-                    </div><!-- /nav at end of page -->
-                </div><!-- /end of footer -->
+            <div data-role="footer" class="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div><!-- Footer end -->
         </div>
 <!--........................End of Create Event page........................-->
+
+<!--........................Contact Host page...............................-->
+        <div data-role="page" id="contact-host">
+            <div data-role="header" data-position="fixed" class="header">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <h2><strong>Contact the Host</strong></h2>
+                <p>Have Questions or Comments?</p><hr>
+
+                <h3>"Event Name Here"</h3>
+
+                <textarea cols="40" rows="10" name="textarea-6" id="textarea-6" data-mini="true"></textarea>
+
+                <div style = "text-align:right" width=80% height = 40%;>
+                     <a href = "#contact-feedback" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">Submit</a>
+                </div>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Contact Host page...............................-->
+
+<!--........................Contact Feedback page...............................-->
+        <div data-role="page" id="contact-feedback">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <h2><strong>A message will be sent to the host of "Event Name Here".</strong></h2>
+                <p>Are you sure you want to submit your feedback?</p><hr><br>
+
+                <form>
+                    <a href="#contact-confirm" style="background: green; color: white;" data-role="button" data-inline="true" data-icon="check">Yes</a>
+                    <a data-rel="back" style="background: red; color: white;" back-btn="true" data-role="button" data-inline="true" data-theme="b" data-icon="delete">No</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Contact Feedback page...............................-->
+
+<!--........................Contact Confirm page...............................-->
+        <div data-role="page" id="contact-confirm">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content" style="text-align: center; vertical-align: center;"> 
+                <h2><strong>A message was sent to the host of "Event Name Here"</strong></h2><hr>
+                <p>Thanks for your feedback! The host will get back to you as soon as possible.</p>
+                <form>
+                    <a href="#home" data-role="button" data-inline="true">Back to Events</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Contact Confirm page...............................-->
+
+<!--.................................RSVP page.....................................-->
+<!--Header-->
+        <div data-role="page" id="rsvp">
+            <div data-role="header" data-position="inline" class="header">
+
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <br><br>
+                <h2><strong>RSVP for "Event Name Here"</strong></h2>
+                <h3>Reserve Your Ticket(s) Here:</h3>
+                <form>
+                <label for="select-quantity" class="select">Quantity</label>
+                	<select name="select-quantity" id="select-quantity">
+                		<option value="1">1</option>
+                		<option value="2">2</option>
+                		<option value="3">3</option>
+                		<option value="4">4</option>
+                		<option value="5">5+</option>
+                	</select>
+                <a href="#rsvp-feedback" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">RSVP now!</a>
+                </form>
+            </div><!--RSVP page content -->
+
+            <!-- RSVP Footer -->
+            
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of RSVP page...............................--> 
+
+<!--........................RSVP Confirm page...............................-->
+        <div data-role="page" id="rsvp-feedback">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content" style="text-align: center; vertical-align: center;"> 
+                <h2><strong>You have successfully RSVP'd to "Event Name Here"!</strong></h2><hr>
+                <p>A confirmation email has been sent to youremail@college.edu</p>
+                <p>See you there!</p>
+                <form>
+                    <a href="#oevent" data-role="button" data-inline="true">View Event</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of RSVP Confirm page...............................-->
+
+<!--........................End of Create Event page........................-->
+
+<!-- Create confirmation page -->
+    <div data-role="page" id="createconfirmation">
+        <div data-role="header" data-position="fixed" class="header"> 
+                <h1></h1> 
+        </div><!--End of header-->
+
+            <div role="main" class="ui-content" style="text-align: center; vertical-align: center;"> 
+                <h2><strong>Create Event </strong></h2>
+                <p>You have successfully created an event!</p>
+                <p>A confirmation email has been sent to youremail@college.edu</p><hr>
+                <div class="ui-field-contain"> 
+                <p>Share:</p>
+                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-action ui-btn-icon-notext"></button>
+
+                <a href="#wevent" class="ui-btn ui-btn-inline">View event</a>
+            </div>
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--........................End of create confirmation page.................-->  
+
+<!--........................Report page...............................-->
+<div data-role="page" id="report">
+            <div data-role="header" data-position="fixed" class="header">
+                <a data-icon="back" data-rel="back" back-btn="true" data-iconpos="notext" value="Icon only" data-iconpos="left"></a> 
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content">
+                <h3 style="text-align: center;"><strong>Report "Event Name Here"</strong></h3><hr>
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <input type="checkbox" name="spam" id="spam">
+                        <label for="spam">Feels Like Spam</label>
+                        <input type="checkbox" name="harrass" id="harrass">
+                        <label for="harrass">Harassment</label>
+                        <input type="checkbox" name="promote" id="promote">
+                        <label for="promote">Promotes Hateful Speech or Actions</label>
+                        <input type="checkbox" name="incorrect" id="incorrect">
+                        <label for="incorrect">Incorrect Date, Time, or Location</label>
+                        <input type="checkbox" name="incorrect" id="other">
+                        <label for="other">Other (Please Specify):</label>
+                    </fieldset>
+                </form>
+                <form>
+                    <fieldset>
+                        <textarea cols="40" rows="10" name="textarea-6" id="textarea-6" data-mini="true"></textarea>
+                        <a href = "#report-feedback" class = "ui-btn ui-corner-all ui-shadow ui-btn-inline">Submit Report</a>
+                    </fieldset>
+                </form>
+                
+            </div><!--Report content -->
+
+            <!-- Report Footer -->
+            <div data-role="footer" class="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--........................End of Report page...............................--> 
+
+<!--........................RSVP Feedback page...............................-->
+        <div data-role="page" id="report-feedback">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1></h1> 
+            </div><!--End of header-->
+
+            <div role="main" class="ui-content" style="text-align: center; vertical-align: center;"> 
+                <h2><strong>Thank you for reporting "Event Name Here"</strong></h2><hr>
+                <p>We are taking a look at the report submitted and take any further action necessary.</p>
+                <form>
+                    <a href="#home" data-role="button" data-inline="true">Return to Event Listing</a>
+                </form>
+            </div><!--Contact content -->
+
+            <!-- Contact Footer -->
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="search" class = "ui-btn-active">Search</a></li>
+                        <li><a href="#matches" data-icon="user">Matches</a></li>
+                        <li><a href="#create" data-icon="plus">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </body>
+
 </html>
